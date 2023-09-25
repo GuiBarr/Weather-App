@@ -4,35 +4,11 @@ import './Window.css'
 function Window() {
   return (
     <main className='back-container'>
-      <menu className='left-container'>
-        <nav className='search-bar'>
-            <input type='text'className='search-menu' placeholder='Search for places'></input>  
-            <button>location</button>
-        </nav>
-        <div className='background-com-imagem'>
-            <img src='weather-app-master\weather-app-master\Shower.png' alt='weather' className='imagem-sobreposta'></img>
-        </div>
-        <div className='div-temp'>
-            <div className='temperature'>
-                <h1>15</h1>
-                <h3>ºC</h3>
-            </div>
-            <div className=''>
-                <p className='climate'>Shower</p>
-            </div>
-        </div>
-        <div className='date-location'>
-            <h4 className='date'>Today - Fri, 5 Jun</h4>
-            <div className='location'>
-                <image></image>
-                <h4>Helsinki</h4>
-            </div>
-        </div>
-      </menu>
+      
 
-      {/*  */}
+      {/* segunda parte do codigo */}
 
-      <content className='right-container'>
+      <div className='right-container'>
         <div className='scale'>
             <div className='btns'>
             <button className='btn-scale'>°C</button>
@@ -136,7 +112,7 @@ function Window() {
         <div className='userName'>
             <p>created by GuiBarr - Funval alumn</p>
         </div>
-      </content>
+      </div>
     </main>
   )
 }
