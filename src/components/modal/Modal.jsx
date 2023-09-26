@@ -1,11 +1,13 @@
 import React from 'react'
+import './Modal.css'
 
-function Modal() {
+function Modal({ onButtonClick }) {
   return (
-    <div>
-      <menu>
+    <div >
+      <div className='bgd-modal'>
+      <menu className='modal'>
         <div>
-            <button>X</button>  
+            <button onClick={onButtonClick}>X</button>  
         </div>
         <nav>
             <input type='text' placeholder='search location'></input>
@@ -17,6 +19,7 @@ function Modal() {
             <button>Long Beach</button>
         </div>
       </menu>
+    </div>
     </div>
   )
 }
