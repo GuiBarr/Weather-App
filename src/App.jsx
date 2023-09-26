@@ -7,6 +7,10 @@ import './App.css';
 
 function App() {
 
+  //llave API y URL
+  const apiKey = '40c34496d9b276fdfc2b20fe6b556db9';
+  const apiUrl = 'https://api.openweathermap.org/data/2.5/weather'//current data
+
   // mostrar o ocultar Search/Modal
   const [modalVisible, setModalVisible] = useState(false);
   const [searchVisible, setSearchVisible] = useState(true);
@@ -22,30 +26,19 @@ function App() {
   };
 
   //Ubicación del usuario
-  const [location, setLocation] = useState(false);
+  const [location, setLocation] = useState(null);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
-      getWeather(position.coords.latitude, position.coords.longitude);
-      setLocation(true)
-    })
+      const locationData = {
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+      };
+      console.log('Localização do usuário:', locationData);
+        setLocation(locationData);
+    });
   }, []);
 
-  //guardar los datos de la API
-  const [weather, setWeather] = useState(false);
-
-  let getWeather = async (lat, long) => {
-    let res = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
-      params: {
-        lat: lat,
-        lon: long,
-        appid: process.env.REACT_APP_OPEN_WEATHER_KEY,
-        lang: 'en',
-        units: 'metric'
-      }
-    });
-    setWeather(res.data);
-  }
 
   return (
     <div className='general'>
